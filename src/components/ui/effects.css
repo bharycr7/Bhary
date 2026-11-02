@@ -11,3 +11,26 @@
 .site-atmosphere{position:fixed;inset:0;z-index:4;pointer-events:none}.site-atmosphere .hero-rain{opacity:.28;mask-image:none}.site-atmosphere .rain-control{pointer-events:auto;background:#281d2ae8;border:1px solid #bda58e55;border-radius:20px;right:16px;bottom:16px;padding:10px 14px;color:#f4ead9}.hero-particle-name{height:250px;margin:20px -12px 10px;position:relative;z-index:5}.hero-particle-name .dot-signature{height:100%;margin:0}.particle-heading{margin:0!important;font-size:0!important}.name-accessible{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.footer-signoff{font:500 clamp(40px,7vw,110px)/1.2 Arial;color:#ebe8db;letter-spacing:-4px;padding:55px 0}.footer-signoff em{color:#b7c0a3}@media(max-width:700px){.hero-particle-name{height:220px;margin-top:15px}.site-atmosphere .hero-rain{opacity:.2}.footer-signoff{letter-spacing:-2px;font-size:44px}.site-atmosphere .rain-control{font-size:7px;bottom:10px;right:10px}}
 
 .name-motion-control{position:absolute;bottom:-5px;right:0;font-size:7px}.hero-particle-name .dot-signature{height:calc(100% - 15px)}
+
+/* Keep the atmosphere visible on both paper and wine surfaces. */
+.site-atmosphere .hero-rain{opacity:.85;mask-image:none}
+.site-atmosphere .dr-vignette,.site-atmosphere .dr-grain{display:none}
+.hero-name-stage{grid-column:1/-1;text-align:center;min-width:0}
+.hero-name-stage .hero-particle-name{height:clamp(200px,21vw,330px);width:100%;margin:14px auto 0}
+.hero-name-stage .summary-kicker{font-size:13px;letter-spacing:2px}
+.hero-name-stage .name-motion-control{font-size:10px;right:50%;transform:translateX(50%)}
+.footer-particle-name .hero-particle-name{height:clamp(230px,25vw,390px);margin:35px 0}
+.footer-particle-name .name-motion-control{font-size:10px}
+.story-site .summary-hero{row-gap:30px}
+.story-site .summary-wordmark{font-size:clamp(29px,3vw,42px);white-space:nowrap}
+.story-site .summary-header nav{font-size:15px;gap:22px}
+.story-site .summary-header>div>a{font-size:15px}
+.story-site .summary-position{font-size:clamp(32px,3.5vw,50px);line-height:1.18;margin-top:22px}
+.story-site .summary-bio{font-size:18px;line-height:1.75;color:#ead6dc}
+.story-site .summary-hero-actions a{font-size:16px}
+.story-site .identity-tags a{font-size:12px}
+.story-site .hero-experience p{font-size:16px}
+.story-site .hero-experience>span{font-size:11px}
+.signature-intro .footer-label{font-size:18px}
+@media(max-width:1050px){.story-site .summary-header nav{gap:12px;font-size:13px}.story-site .summary-header{padding-inline:4%}}
+@media(max-width:700px){.story-site .summary-header{gap:12px}.story-site .summary-wordmark{font-size:28px;letter-spacing:-1px}.story-site .summary-header>div>a{padding:10px 12px;font-size:13px}.summary-header b{margin-left:5px}.hero-name-stage .summary-kicker{font-size:10px;letter-spacing:1px}.hero-name-stage .hero-particle-name{height:265px}.story-site .summary-bio{font-size:17px}.story-site .summary-hero-actions{gap:18px}.story-site .summary-hero-actions a{font-size:14px}.site-atmosphere .hero-rain{opacity:.75}}
