@@ -37,7 +37,7 @@ export default function ParticleName({paused=false}:{paused?:boolean}){
   function resize(){
    const rect=host!.getBoundingClientRect();const w=Math.round(rect.width),h=Math.round(rect.height);if(w<1||h<1||w===width&&h===height)return;
    width=w;height=h;dpr=Math.min(devicePixelRatio||1,2);el!.width=Math.round(w*dpr);el!.height=Math.round(h*dpr);mask.width=w;mask.height=h;
-   const lines=w<620?['Bharath','Raju KB']:['Bharath Raju KB'];ink!.font='800 100px Arial';const widest=Math.max(...lines.map(line=>ink!.measureText(line).width));
+   const lines=w<720?['Bharath','Raju KB']:['Bharath Raju KB'];ink!.font='800 100px Arial';const widest=Math.max(...lines.map(line=>ink!.measureText(line).width));
    const size=Math.min((w-12)*100/widest,h/(lines.length*1.14));ink!.font=`800 ${size}px Arial`;ink!.textBaseline='middle';ink!.textAlign='center';ink!.fillStyle='#fff';
    lines.forEach((line,i)=>ink!.fillText(line,w/2,h/2+(i-(lines.length-1)/2)*size*1.05));
    const pixels=ink!.getImageData(0,0,w,h).data,step=w<620?4:5;radius=w<620?1.25:1.6;dots=[];
