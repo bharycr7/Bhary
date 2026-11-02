@@ -29,3 +29,11 @@ The introduction now explains Bharath's value, product and creator work, interac
 ### Investor and credentials chapters
 
 `content/personal.ts` supplies the featured credentials and startup-validation lenses. The homepage includes a US–India investor chapter, Multipl investment, creator audience, filterable honors/certifications/education, and networking interests. `/styleguide` documents the paper, burgundy, forest, brass, and citrus design system. The owner’s new screenshots and statements are documented in `CONTENT_SOURCES.md`.
+
+### Background effects
+
+`src/components/ui/data-rain.tsx` and `tilted-grid-hero.tsx` adapt the owner-supplied React effects. `PortfolioEffects.tsx` integrates restrained gold/rose rain behind the hero and a curved ribbon made from original reel frames. The featured reel remains playable with sound. `/styleguide` includes standalone effect previews. No Tailwind or shadcn dependency was needed: these React effects use scoped CSS in the existing TypeScript application. See the source notes for lifecycle and reduced-motion behavior.
+
+### Community and signature
+
+`CommunityAndContact.tsx` presents the owner-run Agentbuilders community, its website, and the owner-provided WhatsApp invitation. It also renders the explicit contact address and interactive dot-matrix name. `ui/particle-name.tsx` uses local canvas text sampling and spring motion, with offscreen/hidden-tab suspension, a pause control, reduced-motion support, and a text fallback.
