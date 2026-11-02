@@ -1,0 +1,62 @@
+/* Portfolio palette: carbon surfaces, ember accents, warm readable text. */
+html body{--paper:#0c0c0c;--ink:#fff4e8;--muted:#c0afa2;--rule:#403127;--accent:#ff8a38;--yellow:#ff8a38;background:#0c0c0c;color:#fff4e8}
+body .summary-site,body .story-site{--paper:#0c0c0c;--ink:#fff4e8;--muted:#c0afa2;--wine:#ff8a38;--yellow:#ff8a38;--forest:#161210;--line:#443126;background:#0c0c0c;color:#fff4e8}
+body .story-site .summary-header{background:#0c0c0c;border-color:#443126;color:#fff4e8}
+body .story-site .summary-hero{background:radial-gradient(ellipse at 95% 0%,#ad400b66,transparent 60%),linear-gradient(145deg,#090909,#21130d);color:#fff4e8}
+body .summary-header>div>a,body .story-site .hero-primary,body .community-join{background:#ff8a38;color:#160c06}
+body .story-site .summary-header nav a:after{background:#ff8a38}
+body .summary-ticker,body .vox-marker>i{background:#ff8a38;color:#160c06}
+body .vox-marker>span{color:#160c06}
+body .story-site .summary-bio,body .hero-experience p,body .identity-tags>a{color:#ead7c7}
+body .identity-tags>a,body .hero-experience{border-color:#9d5b353e}
+body .summary-site h2 em,body .summary-section-title h2 em,body .credential-heading h2 em,body .community-copy h2 em,body .investor-intro h2 em{color:#ff9b55}
+body .value-prose p,body .value-pillars p,body .project-card-copy p,body .project-context,body .credential-heading>p,body .next-chapter p,body .community-copy p{color:#c6b5a7}
+body .value-prose p:first-child,body .community-copy h2,body .community-copy .community-lead,body .community-lead strong{color:#fff0e0}
+body .story-site .value-pillars,body .story-site .next-chapter,body .creator-audience-panel,body .community-chapter{background:#191512;border-color:#4a3224;color:#fff4e8}
+body .story-site .story-project{background:#181513;border-color:#4a3224;color:#fff4e8}
+body .project-card-copy h3{color:#fff4e8}
+body .summary-site .chapter-index,body .summary-site .summary-kicker,body .summary-section-title>span,body .value-pillars article>span{color:#dcab84}
+body .summary-site .hero-name-stage .summary-kicker{color:#ffe2c8}
+body .value-prose a,body .value-pillars a,body .summary-section-title>a,body .credential-profile,body .community-website{color:#ffa365;border-color:#86502d}
+body .creator-audience-panel strong,body .creator-audience-panel h3,body .creator-audience-panel h3 em{color:#ff9b55}
+body .creator-audience-panel p,body .audience-platforms{color:#d0bdae}
+body .creator-audience-panel:after{color:#8f441a}
+body .investor-chapter{background:#19120e;border-color:#4a3224}
+body .investor-chapter:before{background:radial-gradient(ellipse at 100% 15%,#d25d1730,transparent 60%)}
+body .investment-note{background:#ff9b55;color:#1e1008}
+body .investment-note strong,body .investment-note>span,body .investment-note small{color:#422311}
+body .investment-atlas .atlas-route{stroke:#ff8a38}body .investment-atlas .atlas-point{fill:#ff8a38}
+body .community-art{background:radial-gradient(ellipse,#8a401d25,transparent 70%)}
+body .community-brand,body .community-art-note,body .community-channel{color:#e2ad84}
+body .community-node{background:#2a1e17;border-color:#754324;color:#ffe7d3}
+body .community-node>span{background:#ff8a38;color:#190e07}
+body .credential-chapter{border-color:#4a3224}
+body .credential-card,body .credential-card.blue,body .credential-card.wine{background:#211a16;border-color:#ff8a38;box-shadow:10px 12px 0 #0005;color:#fff4e8}
+body .credential-card.gold{background:radial-gradient(ellipse at right,#72340e60,transparent 70%),#16100c;border-color:#ff8a38}
+body .credential-card .credential-card-copy h3{color:#fff0e0;text-decoration-color:#b55823}
+body .credential-card .credential-card-copy p,body .credential-card .credential-card-top,body .credential-card .credential-date,body .credential-card .credential-index{color:#cbb7a7}
+body .credential-card .credential-kind{background:#ff8a38!important;color:#1b0e05!important}
+body .credential-year{color:#ff9b5525}
+body .credential-filter{border-color:#754324}
+body .credential-filter button{color:#d5bba6}
+body .credential-filter button[aria-pressed=true]{background:#ff8a38;color:#1b0e05}
+body .signature-footer{background:#080808;color:#fff4e8;border-top:1px solid #4a3224}
+body .signature-footer .footer-label,body .signature-fullname,body .signature-footer nav a,body .signature-contact p,body .signature-rule>span,body .signature-instagram{color:#c5ac99}
+body .signature-intro p,body .signature-contact>a:first-of-type{color:#ffe2ca}
+body .site-atmosphere .rain-control{background:#1a1009ed;border-color:#b46b38;color:#ffddb9}
+body .ribbon-play{background:#211209e8;border-color:#c17c4a;color:#ffe8d4}
+body .ambient-control,body .ribbon-topline{color:#e4b58e}
+body .ribbon-controls strong{color:#ffe4ca}
+body .project-detail-story,body .work-index{background:#0c0c0c;color:#fff4e8}
+body .project-detail-title .lead,body .project-detail-title .role{color:#d0bdae}
+body .project-detail-title h1{color:#fff4e8}
+body ::selection{background:#ff8a38;color:#160c06}
+body .skill-map,body .skill-detail,body .lens-panel{background:#211a16;color:#fff0e0;border-color:#754324}
+body .skill-detail h3,body .skill-detail>p,body .skill-detail>a,body .skill-detail>div>span{color:#e4c5ad}
+body .map-node{background:#302219;color:#ffe4cc;border-color:#754324}
+body .map-node[aria-selected=true],body .lens-tabs button[aria-selected=true]{background:#ff8a38;color:#1b0e05}
+body .map-core{background:#a34413;color:#fff0e0}
+body .map-core em,body .map-core>b,body .lens-intro h3 em{color:#ffac70}
+body .lens-panel p,body .lens-panel li,body .lens-panel h4,body .lens-tabs button{color:#ead0ba}
+body .creator-process p,body .creator-process a,body .project-card-copy>div,body .project-card-copy>div>span,body .project-card-copy>b,body .reel-caption,body .reel-caption p{color:#d9aa86}
+body .story-site .reel-picker>button[aria-pressed=true]{background:#ff8a38;color:#1b0e05}
