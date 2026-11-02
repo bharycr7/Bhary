@@ -25,3 +25,7 @@ The owner approved publication, and the reviewed portfolio has been pushed to Gi
 ### Current portfolio structure
 
 The introduction now explains Bharath's value, product and creator work, interactive expertise mindmap, profile-backed recognition, and current interests. `/work` is the project index; four `/work/[slug]` pages contain dedicated interactive workflows and case narratives. Nine original July reels appear in a floating, keyboard-accessible gallery, including the additional OpenCode, Remotion, Claude image-creation, and X Bookmarks uploads. Repeated Swiggy footage appears once. Use `/styleguide` for the burgundy/paper/yellow editorial system and motion contract.
+
+### Investor and credentials chapters
+
+`content/personal.ts` supplies the featured credentials and startup-validation lenses. The homepage includes a US–India investor chapter, Multipl investment, creator audience, filterable honors/certifications/education, and networking interests. `/styleguide` documents the paper, burgundy, forest, brass, and citrus design system. The owner’s new screenshots and statements are documented in `CONTENT_SOURCES.md`.
