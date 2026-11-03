@@ -2,7 +2,7 @@
 body{font-size:20px;line-height:1.6}
 body .summary-site :is(p,li),body .signature-footer p{font-size:21px!important;line-height:1.7;color:#f0e2d5!important}
 body .summary-site :is(a,button),body .signature-footer :is(a,button){font-size:18px!important;line-height:1.5}
-body .summary-site :is(.chapter-index,.summary-kicker,.footer-label,.credential-card-top,.credential-date,.project-context,.project-card-copy>div>span,.browser-label,.panel-label,.creator-topics span,.community-channel,.community-node>strong),body .signature-footer :is(.footer-label,.signature-fullname,.signature-bottom,.signature-rule>span){font-size:16px!important;line-height:1.6;color:#f2cead!important;letter-spacing:.5px}
+body .summary-site :is(.chapter-index,.summary-kicker,.footer-label,.credential-card-top,.credential-date,.project-context,.project-card-copy>div>span,.browser-label,.panel-label,.creator-topics span,.community-channel,.community-node>strong),body .signature-footer :is(.footer-label,.signature-fullname,.signature-bottom,.signature-rule>span){font-size:16px!important;line-height:1.6;color:var(--ui-muted)!important;letter-spacing:.5px}
 body .summary-site .summary-wordmark{font-size:clamp(28px,3vw,42px)!important}
 body .summary-site .summary-position{font-size:clamp(34px,3.5vw,50px)!important;line-height:1.2;color:#fff2e5!important}
 body .summary-site .vox-marker{color:#fff2e5;background:#ff8a38}body .summary-site .vox-marker>span{color:#160c06}

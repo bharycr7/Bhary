@@ -36,3 +36,8 @@ html[data-theme="dark"] body .summary-site .summary-header{background:#070708;bo
 html[data-theme="dark"] body .summary-site .project-scroll-art{background:radial-gradient(ellipse at 50% 30%,#382319,transparent 75%),#101012}
 html[data-theme="dark"] body .summary-site :is(.credential-open,.project-scroll-category,.project-scroll-copy>strong){color:#ffb278!important}
 html[data-theme="dark"] body .summary-site :is(.summary-section-title>span,.value-pillars article>span,.project-context,.creator-topics span,.creator-resources>span,.map-note,.credential-index,.reel-controls,.real-reels-heading){color:var(--ui-muted)!important}
+
+/* Diagram labels must inherit the active theme, never a fixed pastel color. */
+html body .summary-site .community-node>strong{color:var(--ui-text)!important;font-weight:600}
+html body .summary-site .community-art>svg path{stroke:var(--ui-accent);stroke-width:2.5}
+html body .summary-site .community-brand>span{color:var(--ui-text);border-color:var(--ui-line)}
