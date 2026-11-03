@@ -1,0 +1,7 @@
+'use client';
+import {createContext,useContext,useEffect,useState} from 'react';
+type Theme='light'|'dark';
+const ThemeContext=createContext<{theme:Theme;toggle:()=>void}>({theme:'light',toggle:()=>{}});
+const key='bharath-portfolio-theme';
+export function useTheme(){return useContext(ThemeContext)}
+export default function ThemeProvider({children}:{children:React.ReactNode}){const[theme,setTheme]=useState<Theme>('light');useEffect(()=>{const media=matchMedia('(prefers-color-scheme: dark)');const sync=()=>{let saved:string|null=null;try{saved=localStorage.getItem(key)}catch{}const next:Theme=saved==='light'||saved==='dark'?saved:media.matches?'dark':'light';document.documentElement.dataset.theme=next;setTheme(next)};sync();media.addEventListener('change',sync);const storage=(e:StorageEvent)=>{if(e.key===key||e.key===null)sync()};window.addEventListener('storage',storage);return()=>{media.removeEventListener('change',sync);window.removeEventListener('storage',storage)}},[]);function toggle(){const next=theme==='light'?'dark':'light';document.documentElement.dataset.theme=next;setTheme(next);try{localStorage.setItem(key,next)}catch{}}return <ThemeContext.Provider value={{theme,toggle}}>{children}<button className="theme-toggle" onClick={toggle} aria-label={'Switch to '+(theme==='light'?'dark':'light')+' mode'}><span className="theme-light-label"><span aria-hidden="true">☾</span> Dark mode</span><span className="theme-dark-label"><span aria-hidden="true">☀</span> Light mode</span></button></ThemeContext.Provider>}

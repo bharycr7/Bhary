@@ -1,8 +1,10 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
+import {useTheme} from '../ThemeProvider';
 
 /** A responsive dot-matrix signature with spring-based pointer displacement. */
 export default function ParticleName({paused=false}:{paused?:boolean}){
+ const {theme}=useTheme();
  const root=useRef<HTMLDivElement>(null),canvas=useRef<HTMLCanvasElement>(null);
  const[reduced,setReduced]=useState<boolean|null>(null);
  useEffect(()=>{const media=matchMedia('(prefers-reduced-motion: reduce)');const sync=()=>setReduced(media.matches);sync();media.addEventListener('change',sync);return()=>media.removeEventListener('change',sync)},[]);
@@ -16,7 +18,7 @@ export default function ParticleName({paused=false}:{paused?:boolean}){
   const stop=()=>{cancelAnimationFrame(raf);raf=0;host.dataset.running='false'};
   function paint(){
    if(!ctx)return;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,width,height);
-   for(const p of dots){const h=Math.min(1,p.heat);ctx.fillStyle=h>.02?`rgb(${Math.round(32+20*h)},${Math.round(32+43*h)},${Math.round(32+189*h)})`:'#202020';ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.fill()}
+   for(const p of dots){const h=Math.min(1,p.heat);ctx.fillStyle=theme==='dark'?(h>.02?`rgb(255,${Math.round(240-100*h)},${Math.round(220-150*h)})`:'#f5f1e8'):(h>.02?`rgb(${Math.round(32+20*h)},${Math.round(32+43*h)},${Math.round(32+189*h)})`:'#202020');ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.fill()}
   }
   function frame(now:number){
    raf=0;if(disposed||!visible||document.hidden||paused||reduced){stop();return}
@@ -52,6 +54,6 @@ export default function ParticleName({paused=false}:{paused?:boolean}){
   const io=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;if(visible){if(!introduced){sweepStart=performance.now();introduced=true}start()}else{pointer.active=false;stop()}});io.observe(host);
   host.addEventListener('pointermove',move,{passive:true});host.addEventListener('pointerleave',leave);document.addEventListener('visibilitychange',visibility);host.dataset.running='false';
   return()=>{disposed=true;stop();ro.disconnect();io.disconnect();host.removeEventListener('pointermove',move);host.removeEventListener('pointerleave',leave);document.removeEventListener('visibilitychange',visibility)};
- },[paused,reduced]);
+ },[paused,reduced,theme]);
  return <div ref={root} className="dot-signature" role="img" aria-label="Bharath Raju KB"><canvas ref={canvas} aria-hidden="true"/><span className="signature-fallback" aria-hidden="true">Bharath Raju KB</span></div>
 }
