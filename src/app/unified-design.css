@@ -1,0 +1,52 @@
+/* Final shared type/color contract. Display scale is reserved for page heroes. */
+:root{--ui-bg:#0b0b0c;--ui-panel:#171719;--ui-raised:#222225;--ui-text:#f5f5f5;--ui-muted:#c2c2c8;--ui-line:#38383d;--ui-accent:#ff8b43;--ui-body:18px;--ui-label:15px;--ui-heading:32px}
+body,body .summary-site,body .story-site{background:var(--ui-bg);color:var(--ui-text);font-family:Arial,Helvetica,sans-serif}
+body .summary-site :is(p,li),body .signature-footer p{font-size:var(--ui-body)!important;line-height:1.65!important;color:var(--ui-muted)!important}
+body .summary-site :is(a,button),body .signature-footer :is(a,button){font-size:17px!important;line-height:1.5}
+body .summary-site :is(h2,h3){font-family:Arial,Helvetica,sans-serif!important;font-style:normal;font-weight:500;line-height:1.2;letter-spacing:-.7px;color:var(--ui-text)}
+body .summary-site h2{font-size:var(--ui-heading)!important}
+body .summary-site h3{font-size:26px!important}
+body .summary-site :is(h2,h3) em{font-family:inherit;font-style:normal;color:var(--ui-accent)}
+body .summary-site :is(.chapter-index,.eyebrow,.summary-kicker,.credential-card-top,.credential-date,.credential-kind,.project-scroll-category,.project-scroll-art>span,.footer-label,.project-card-copy>span,.gtm-tabs button span,.theatre-heading,.role){font-size:var(--ui-label)!important;color:var(--ui-muted)!important;letter-spacing:.4px;line-height:1.5}
+body .summary-site .summary-position{font-size:clamp(34px,4vw,54px)!important;line-height:1.15!important;color:var(--ui-text)!important}
+body .summary-site .summary-wordmark{font-size:clamp(28px,3vw,42px)!important}
+body .summary-site .summary-hero{background:radial-gradient(ellipse at 90% 0%,#a9430c55,transparent 65%),#0b0b0c}
+body .summary-site :is(.value-pillars,.story-project,.creator-audience-panel,.investor-chapter,.community-chapter,.credential-card,.credential-card.gold,.credential-card.blue,.credential-card.wine,.next-chapter,.gtm-stage,.mastery-artifact,.skill-detail,.skill-map,.lens-panel,.project-scroll-card){background:var(--ui-panel);border-color:var(--ui-line);color:var(--ui-text)}
+body .summary-site :is(.community-node,.map-node,.gtm-flow>div){background:var(--ui-raised);color:var(--ui-text);border-color:var(--ui-line)}
+body .summary-site :is(.credential-card-copy h3,.credential-card.gold h3){font-size:26px!important;text-decoration:none;color:var(--ui-text)}
+body .summary-site :is(.credential-card-copy p,.community-copy p,.creator-audience-panel p,.investor-intro p){color:var(--ui-muted)!important}
+body .summary-site .project-scroll-card{text-align:left;cursor:pointer;padding:0;font-family:inherit}
+body .summary-site .project-scroll-copy h3{font-size:32px!important}
+body .summary-site .project-scroll-copy li{font-size:17px!important}
+body .summary-site .project-scroll-copy>strong{color:var(--ui-accent);font-size:17px}
+body .summary-site .project-scroll-art{background:#101012;border-color:var(--ui-line)}
+body .summary-site .project-scroll-art .project-scroll-art-note{font:500 22px/1.4 Arial;color:var(--ui-text)}
+body .summary-site .project-scroll-card:hover{border-color:var(--ui-accent)}
+body .summary-site .project-scroll-card:focus-visible{outline:3px solid var(--ui-accent);outline-offset:-4px}
+body .summary-site .project-scroll-category{color:var(--ui-accent)!important}
+body .summary-site .concise-project{max-width:1280px;margin:auto;padding:0 5% 70px}
+body .summary-site .concise-project>header{padding-inline:0;border-color:var(--ui-line)}
+body .summary-site .project-detail-title{padding:55px 0 25px;max-width:900px}
+body .summary-site .project-detail-title h1{font:500 clamp(42px,5vw,68px)/1.08 Arial;letter-spacing:-2px;color:var(--ui-text);margin:20px 0}
+body .summary-site .project-detail-title .lead{max-width:65ch;margin-bottom:16px}
+body .summary-site .project-detail-title .role{max-width:75ch;margin:0}
+body .summary-site .project-cinema{padding:0;margin:25px 0 45px;max-width:none}
+body .summary-site .project-cinema>div:first-child{display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+body .summary-site .project-cinema .chapter-index{display:none}
+body .summary-site .project-cinema h2{margin:0;font-size:26px!important}
+body .summary-site .project-cinema p{margin:0}
+body .summary-site .project-film-player{margin-top:20px;border-color:var(--ui-line);box-shadow:none;border-radius:16px;background:#0b0b0c;position:relative;z-index:5}
+body .summary-site .project-summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:35px 0}
+body .summary-site .project-summary-grid article{border-top:1px solid var(--ui-line);padding-top:22px}
+body .summary-site .project-summary-grid h2{font-size:24px!important;margin:0 0 16px}
+body .summary-site .project-summary-grid p{margin:0}
+.project-deep-dive{border-block:1px solid var(--ui-line);padding:24px 0;margin:35px 0;color:var(--ui-text)}
+.project-deep-dive summary{cursor:pointer;font-size:18px;list-style:none}.project-deep-dive summary>span{float:right;color:var(--ui-accent)}
+.project-deep-dive>div{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:25px}.project-deep-dive section{max-width:60ch}
+.product-video-dialog{width:min(1180px,94vw);max-height:92dvh;padding:24px;background:var(--ui-bg);color:var(--ui-text);border:1px solid var(--ui-line);border-radius:20px;overflow:auto}
+.product-video-dialog::backdrop{background:#000d;backdrop-filter:blur(12px)}
+.video-dialog-heading,.video-dialog-footer{display:flex;justify-content:space-between;align-items:center;gap:20px}
+body .summary-site .video-dialog-heading h2{font-size:28px!important;margin:0}
+.video-dialog-heading button{background:var(--ui-raised);border:1px solid var(--ui-line);color:var(--ui-text);padding:10px 18px;border-radius:25px}
+.video-dialog-footer{margin-top:22px;font-size:16px;color:var(--ui-muted)}.video-dialog-footer a{color:var(--ui-accent)}
+@media(max-width:800px){body .summary-site :is(p,li){font-size:18px!important}body .summary-site .project-summary-grid,.project-deep-dive>div{grid-template-columns:1fr}body .summary-site .project-detail-title{padding-top:35px}.product-video-dialog{padding:14px;border-radius:12px}.video-dialog-heading{align-items:flex-start}body .summary-site .video-dialog-heading h2{font-size:24px!important}.video-dialog-footer{align-items:flex-start;flex-direction:column}body .summary-site .project-cinema>div:first-child{gap:12px}body .summary-site h2{font-size:30px!important}}

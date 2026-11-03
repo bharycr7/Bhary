@@ -1,0 +1,6 @@
+export const projectSummaries:Record<string,{problem:string;decision:string;status:string}>={
+ aexvion:{problem:'Briefs, tasks, and generated work can lose their connection to the original evidence.',decision:'Connect cited requirements to an approved plan, bounded execution, and a reviewable package.',status:'In development. The product centers on human approval and traceable delivery.'},
+ 'data-state-intelligence':{problem:'A successful job does not always mean a business dataset is ready.',decision:'Bring quality, dependencies, and readiness into a shared dataset view.',status:'The case notes describe adoption across hundreds of datasets and real-time quality alerts.'},
+ 'test-data-platform':{problem:'Manual preparation slowed access to useful test data.',decision:'Combine generation, privacy rules, and owner approval in a repeatable workflow.',status:'The supplied notes report faster intake and support for 17 use cases.'},
+ 'usage-analytics':{problem:'Teams needed flexible queries and reliable access to historical usage.',decision:'Choose storage and asynchronous exports around the questions people need to answer.',status:'An architecture decision balancing query flexibility, cost, and operational support.'}
+};
