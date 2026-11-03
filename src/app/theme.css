@@ -41,3 +41,16 @@ html[data-theme="dark"] body .summary-site :is(.summary-section-title>span,.valu
 html body .summary-site .community-node>strong{color:var(--ui-text)!important;font-weight:600}
 html body .summary-site .community-art>svg path{stroke:var(--ui-accent);stroke-width:2.5}
 html body .summary-site .community-brand>span{color:var(--ui-text);border-color:var(--ui-line)}
+
+/* A concise landing page with dedicated destinations for deeper content. */
+.overview-directory{padding:55px 0 70px;border-top:1px solid var(--ui-line)}
+.overview-directory>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:28px}
+.overview-directory>div>a{display:block;padding:28px;border:1px solid var(--ui-line);border-radius:16px;background:var(--ui-panel);color:var(--ui-text)}
+.overview-directory h3{margin:0 0 12px}.overview-directory p{margin:0 0 18px}
+.overview-directory>div>a>span{color:var(--ui-accent);font-weight:600}
+.overview-directory>div>a:hover,.overview-directory>div>a:focus-visible{border-color:var(--ui-accent);outline:2px solid var(--ui-accent);outline-offset:3px}
+.detail-page-intro{padding:55px 0 35px;border-bottom:1px solid var(--ui-line);margin-bottom:35px}
+body .summary-site .detail-page-intro h1{font:400 clamp(42px,5vw,68px)/1.1 var(--display-font);max-width:18ch;margin:24px 0}
+.detail-page-intro>p{max-width:62ch}.detail-page-intro>a{color:var(--ui-accent)}
+.detail-page .community-chapter{margin-top:0}
+@media(max-width:700px){.overview-directory>div{grid-template-columns:1fr}.overview-directory>div>a{padding:22px}.detail-page-intro{padding-top:32px}}

@@ -1,0 +1,2 @@
+import {profile} from '../../content/profile';
+export default function PortfolioHeader(){return <header className="summary-header"><a className="summary-wordmark" href="/">Bharath’s <em>Portfolio</em></a><nav aria-label="Main navigation"><a href="/work">Projects</a><a href="/creator">Creator</a><a href="/about">About</a><a href="/resources">Resources</a><a href="/community">Community</a></nav><div><a href={'mailto:'+profile.email}>Let’s talk ↗</a></div></header>}
