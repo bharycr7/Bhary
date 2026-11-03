@@ -1,5 +1,5 @@
 :root{--display-font:'Instrument Serif',Georgia,serif;color-scheme:light}
-html[data-theme="dark"]{color-scheme:dark;--ui-bg:#0b0b0c;--ui-panel:#171719;--ui-raised:#222225;--ui-text:#f5f5f5;--ui-muted:#c2c2c8;--ui-line:#38383d;--ui-accent:#ff8b43}
+html[data-theme="dark"]{color-scheme:dark;--ui-bg:#070708;--ui-panel:#19191d;--ui-raised:#29292f;--ui-text:#ffffff;--ui-muted:#dedee4;--ui-line:#686870;--ui-accent:#ff9b55}
 /* Typography remains stable when the palette changes. */
 body .summary-site :is(h1,h2,h3),body .summary-site :is(h2,h3) em,body .summary-site .summary-wordmark,body .summary-site .summary-position{font-family:var(--display-font)!important;font-weight:400!important}
 body .summary-site h2{font-size:40px!important}body .summary-site h3{font-size:32px!important}
@@ -25,3 +25,14 @@ html[data-theme="dark"] .summary-site .creator-audience-panel strong,html[data-t
 html[data-theme="dark"] .summary-site .summary-header{background:#0b0b0c;color:#f5f5f5;border-color:#38383d}
 html[data-theme="dark"] .site-atmosphere .hero-rain{opacity:.65}
 @media(max-width:700px){.theme-toggle{left:10px;bottom:10px;padding:10px 12px;font-size:15px}body .summary-site .summary-wordmark{font-size:32px!important}body .summary-site .summary-position{font-size:46px!important}body .summary-site h2{font-size:36px!important}body .summary-site h3{font-size:30px!important}}
+
+/* Solid controls and stronger surface edges keep both themes legible. */
+.theme-toggle{background:var(--ui-text);color:var(--ui-bg);border:2px solid var(--ui-text);box-shadow:0 4px 18px #0003;font-weight:600}
+html body .summary-site :is(.name-motion-control,.ambient-control),html body .signature-footer .name-motion-control{color:var(--ui-muted)!important;opacity:1}
+html body .site-atmosphere .rain-control{background:var(--ui-panel);color:var(--ui-text);border-color:var(--ui-line);opacity:1}
+html body .summary-site :is(.project-scroll-card,.credential-card,.mastery-artifact){box-shadow:0 8px 24px #00000012}
+html[data-theme="dark"] body .summary-site .summary-hero{background:radial-gradient(ellipse at 90% 0%,#793009,transparent 65%),#070708}
+html[data-theme="dark"] body .summary-site .summary-header{background:#070708;border-color:var(--ui-line)}
+html[data-theme="dark"] body .summary-site .project-scroll-art{background:radial-gradient(ellipse at 50% 30%,#382319,transparent 75%),#101012}
+html[data-theme="dark"] body .summary-site :is(.credential-open,.project-scroll-category,.project-scroll-copy>strong){color:#ffb278!important}
+html[data-theme="dark"] body .summary-site :is(.summary-section-title>span,.value-pillars article>span,.project-context,.creator-topics span,.creator-resources>span,.map-note,.credential-index,.reel-controls,.real-reels-heading){color:var(--ui-muted)!important}
