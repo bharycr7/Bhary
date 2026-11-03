@@ -54,3 +54,20 @@ body .summary-site .detail-page-intro h1{font:400 clamp(42px,5vw,68px)/1.1 var(-
 .detail-page-intro>p{max-width:62ch}.detail-page-intro>a{color:var(--ui-accent)}
 .detail-page .community-chapter{margin-top:0}
 @media(max-width:700px){.overview-directory>div{grid-template-columns:1fr}.overview-directory>div>a{padding:22px}.detail-page-intro{padding-top:32px}}
+
+.explore-jump-nav{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 35px;padding:20px 0;border-bottom:1px solid var(--ui-line)}
+.explore-jump-nav a,.connect-links a,.explore-action{display:inline-block;background:var(--ui-panel);color:var(--ui-text);border:1px solid var(--ui-line);padding:12px 18px;border-radius:24px}
+.explore-jump-nav a:hover,.connect-links a:hover,.explore-action:hover{border-color:var(--ui-accent);color:var(--ui-accent)}
+.explore-section{padding:45px 0;border-bottom:1px solid var(--ui-line);scroll-margin-top:28px}
+.explore-section>header{margin-bottom:28px}.explore-section>header h2{margin:16px 0}.explore-section>header p{max-width:65ch}
+.offering-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:30px 0}
+.offering-grid article{background:var(--ui-panel);border:1px solid var(--ui-line);border-radius:16px;padding:25px}
+.offering-grid h3{margin:0 0 16px}.offering-grid p{margin:0}
+.explore-disclosure{border:1px solid var(--ui-line);border-radius:12px;padding:22px;margin-top:24px;background:var(--ui-panel);scroll-margin-top:24px}
+.explore-disclosure summary{font-size:20px;font-weight:600;cursor:pointer;color:var(--ui-text)}
+.explore-disclosure[open]>summary{margin-bottom:28px}
+.explore-disclosure .credential-chapter{padding-top:20px}
+.explore-section .investor-chapter{margin-top:0}
+.connect-links{display:flex;flex-wrap:wrap;gap:16px}.connect-links a{overflow-wrap:anywhere;max-width:100%}
+.summary-recognition{margin-top:32px!important;max-width:70ch}
+@media(max-width:800px){.offering-grid{grid-template-columns:1fr}.explore-disclosure{padding:16px}.explore-section{padding:30px 0}.explore-jump-nav a{padding:10px 14px}}

@@ -1,4 +1,2 @@
-import {ProjectIndex} from '../../components/PortfolioStory';
-import '../../components/portfolio-summary.css';
-export const metadata={title:'Projects — Bharath’s Portfolio'};
-export default function Projects(){return <ProjectIndex/>}
+import {redirect} from 'next/navigation';
+export default function Page(){redirect('/explore#projects')}

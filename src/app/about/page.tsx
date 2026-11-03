@@ -1,7 +1,2 @@
-import PortfolioPage from '../../components/PortfolioPage';
-import {InvestorChapter,CredentialsChapter} from '../../components/PersonalChapters';
-import {SkillMap} from '../../components/PortfolioStory';
-import {profile} from '../../../content/profile';
-export const metadata={title:'About — Bharath’s Portfolio'};
-export default function About(){return <PortfolioPage title="Product judgment. Technical curiosity." intro="How I think, what I’m good at, and where I want to go next."><section className="expertise-section" id="skills"><div className="summary-section-title"><span>A MAP OF MY EXPERTISE</span><h2>The connections <em>are the skill.</em></h2></div><p className="section-explainer">Product strategy, technical judgment, and communication work together. Explore a branch to see how I use it.</p><SkillMap/></section>
-<InvestorChapter/><CredentialsChapter/><section className="next-chapter"><span className="summary-kicker">WHO I’D LOVE TO CONNECT WITH</span><h2>Product leaders.<br/><em>Founders. Venture capitalists.</em></h2><div><p>I’m looking to build a network of product leaders, founders, and VCs across the US and India. I enjoy conversations that connect product judgment, technical depth, and the business behind an idea.</p><p>I want to keep building useful AI products, validating startup ideas, investing small checks, and sharing what I learn. If you’re thinking about a technology moat, a business moat, or your next product bet, let’s compare notes.</p></div><a href={profile.linkedin}>Let’s connect on LinkedIn ↗</a></section></PortfolioPage>}
+import {redirect} from 'next/navigation';
+export default function Page(){redirect('/explore#offerings')}
