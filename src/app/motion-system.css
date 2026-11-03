@@ -9,3 +9,30 @@
 body .summary-site .project-film-player p{font-size:27px!important;line-height:1.5;color:#f4e7dc!important}
 body .summary-site .project-film-player p:last-child{font-size:18px!important;color:#d3c7bd!important}
 .film-download{display:inline-block;margin-top:20px;color:#ffba89;border-bottom:1px solid #99633c;padding-bottom:8px}
+/* Unified project stories: a native, snap-scrolling rail replaces both old grids. */
+.project-scroll-showcase{margin:15px 0 35px}
+.project-scroll-toolbar{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:24px}
+.project-scroll-controls{display:flex;align-items:center;gap:16px;flex-shrink:0}
+.project-scroll-controls button{width:48px;height:48px;border:1px solid #b2784d;border-radius:50%;background:#24180f;color:#ffe4cc}
+.project-scroll-controls button:disabled{opacity:.35;cursor:default}
+.project-scroll-controls>span{font:16px monospace;color:#ffcd9e;white-space:nowrap}
+.project-scroll-rail{position:relative;display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0;overscroll-behavior-x:contain;padding:4px 4px 24px;scrollbar-width:thin;scrollbar-color:#e28a4b #24180f}
+.project-scroll-card{flex:0 0 87%;min-width:0;scroll-snap-align:start;display:grid;grid-template-columns:.85fr 1fr;gap:0;border:1px solid #715039;border-radius:22px;overflow:hidden;background:#14110f;color:#fff1e4}
+.project-scroll-card:last-child{margin-right:13%}
+.project-scroll-art{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-width:0;padding:30px;background:radial-gradient(ellipse at center,color-mix(in srgb,var(--project-color) 16%,transparent),transparent 75%),#0d1214;perspective:900px;border-right:1px solid #715039}
+.project-scroll-art>span{font:15px/1.5 monospace;color:var(--project-color)}
+.project-scroll-art>div{width:100%;aspect-ratio:1;transform:rotateY(-12deg) rotateX(8deg);transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.project-scroll-card:hover .project-scroll-art>div,.project-scroll-card:focus-visible .project-scroll-art>div{transform:rotateY(0) rotateX(0) scale(1.04)}
+.project-scroll-art .project-scroll-art-note{font:italic 24px/1.4 Georgia;color:#ffe2c6}
+.project-scroll-copy{padding:36px;min-width:0;display:flex;flex-direction:column}
+.project-scroll-category{font:15px/1.6 monospace;color:var(--project-color)}
+body .summary-site .project-scroll-copy h3{font:500 clamp(32px,3vw,44px)/1.1 Arial;letter-spacing:-1px;margin:20px 0 10px;color:#fff1e4}
+.project-scroll-copy ol{list-style:none;padding:20px 0;margin:0;display:grid;gap:14px}
+body .summary-site .project-scroll-copy li{font-size:18px!important;display:flex;gap:18px;line-height:1.4}
+.project-scroll-copy li>span{color:var(--project-color);font:15px/1.7 monospace}
+.project-scroll-copy>strong{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #715039;padding-top:22px;margin-top:auto;font-size:18px;font-weight:500;color:#ffc18c}
+.project-scroll-progress{height:3px;background:#34251c;margin-top:20px;overflow:hidden}
+.project-scroll-progress>span{display:block;width:25%;height:100%;background:#ff9b55;transition:transform .25s}
+@media(max-width:850px){.project-scroll-card{flex-basis:94%;grid-template-columns:1fr}.project-scroll-card:last-child{margin-right:6%}.project-scroll-art{border-right:0;border-bottom:1px solid #715039;padding:22px;min-height:250px}.project-scroll-art>div{position:absolute;right:10px;top:15px;width:240px;height:240px;opacity:.7}.project-scroll-art>span{position:relative;z-index:1;max-width:55%}.project-scroll-art .project-scroll-art-note{max-width:65%;font-size:24px}.project-scroll-copy{padding:26px}.project-scroll-toolbar{align-items:flex-start}.project-scroll-toolbar p{margin:0}.project-scroll-copy ol{grid-template-columns:1fr 1fr;gap:16px}.project-scroll-rail{gap:16px}}
+@media(max-width:500px){.project-scroll-toolbar{flex-direction:column;gap:16px}.project-scroll-card{flex-basis:95%}.project-scroll-card:last-child{margin-right:5%}.project-scroll-copy{padding:24px}.project-scroll-copy ol{grid-template-columns:1fr}.project-scroll-art>div{width:200px;height:200px;top:35px}.project-scroll-art .project-scroll-art-note{max-width:78%}.project-scroll-art>span:first-child{max-width:none}body .summary-site .project-scroll-copy h3{font-size:34px}}
+@media(prefers-reduced-motion:reduce){.project-scroll-art>div,.project-scroll-progress>span{transition:none}.project-scroll-card:hover .project-scroll-art>div{transform:none}}
