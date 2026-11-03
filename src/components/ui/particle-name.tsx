@@ -16,7 +16,7 @@ export default function ParticleName({paused=false}:{paused?:boolean}){
   const stop=()=>{cancelAnimationFrame(raf);raf=0;host.dataset.running='false'};
   function paint(){
    if(!ctx)return;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,width,height);
-   for(const p of dots){const h=Math.min(1,p.heat);ctx.fillStyle=h>.02?`rgb(${Math.round(235+20*h)},${Math.round(232-89*h)},${Math.round(219-144*h)})`:'#ebe8db';ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.fill()}
+   for(const p of dots){const h=Math.min(1,p.heat);ctx.fillStyle=h>.02?`rgb(${Math.round(32+20*h)},${Math.round(32+43*h)},${Math.round(32+189*h)})`:'#202020';ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.fill()}
   }
   function frame(now:number){
    raf=0;if(disposed||!visible||document.hidden||paused||reduced){stop();return}
@@ -37,8 +37,8 @@ export default function ParticleName({paused=false}:{paused?:boolean}){
   function resize(){
    const rect=host!.getBoundingClientRect();const w=Math.round(rect.width),h=Math.round(rect.height);if(w<1||h<1||w===width&&h===height)return;
    width=w;height=h;dpr=Math.min(devicePixelRatio||1,2);el!.width=Math.round(w*dpr);el!.height=Math.round(h*dpr);mask.width=w;mask.height=h;
-   const lines=w<720?['Bharath','Raju KB']:['Bharath Raju KB'];ink!.font='800 100px Arial';const widest=Math.max(...lines.map(line=>ink!.measureText(line).width));
-   const size=Math.min((w-12)*100/widest,h/(lines.length*1.14));ink!.font=`800 ${size}px Arial`;ink!.textBaseline='middle';ink!.textAlign='center';ink!.fillStyle='#fff';
+   const lines=w<720?['Bharath','Raju KB']:['Bharath Raju KB'];ink!.font='400 100px "Instrument Serif"';const widest=Math.max(...lines.map(line=>ink!.measureText(line).width));
+   const size=Math.min((w-12)*100/widest,h/(lines.length*1.14));ink!.font=`400 ${size}px "Instrument Serif"`;ink!.textBaseline='middle';ink!.textAlign='center';ink!.fillStyle='#fff';
    lines.forEach((line,i)=>ink!.fillText(line,w/2,h/2+(i-(lines.length-1)/2)*size*1.05));
    const pixels=ink!.getImageData(0,0,w,h).data,step=w<620?4:5;radius=w<620?1.25:1.6;dots=[];
    for(let y=0;y<h;y+=step)for(let x=0;x<w;x+=step)if(pixels[(y*w+x)*4+3]>128)dots.push({ox:x,oy:y,x,y,vx:0,vy:0,heat:0});
@@ -47,6 +47,7 @@ export default function ParticleName({paused=false}:{paused?:boolean}){
   const move=(event:PointerEvent)=>{if(paused||reduced||event.pointerType==='touch')return;const rect=host.getBoundingClientRect();pointer={x:event.clientX-rect.left,y:event.clientY-rect.top,active:true};start()};
   const leave=()=>{pointer.active=false;start()};
   const visibility=()=>{if(document.hidden)stop();else start()};
+  document.fonts.load('400 100px "Instrument Serif"').then(()=>{if(!disposed){width=0;resize()}});
   const ro=new ResizeObserver(resize);ro.observe(host);resize();
   const io=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;if(visible){if(!introduced){sweepStart=performance.now();introduced=true}start()}else{pointer.active=false;stop()}});io.observe(host);
   host.addEventListener('pointermove',move,{passive:true});host.addEventListener('pointerleave',leave);document.addEventListener('visibilitychange',visibility);host.dataset.running='false';

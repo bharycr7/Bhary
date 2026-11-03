@@ -1,5 +1,5 @@
 /* Final shared type/color contract. Display scale is reserved for page heroes. */
-:root{--ui-bg:#0b0b0c;--ui-panel:#171719;--ui-raised:#222225;--ui-text:#f5f5f5;--ui-muted:#c2c2c8;--ui-line:#38383d;--ui-accent:#ff8b43;--ui-body:18px;--ui-label:15px;--ui-heading:32px}
+:root{--ui-bg:#f4f3ef;--ui-panel:#fffefa;--ui-raised:#eae8e2;--ui-text:#202020;--ui-muted:#4e4e50;--ui-line:#d5d2cb;--ui-accent:#344bdd;--ui-body:18px;--ui-label:15px;--ui-heading:32px}
 body,body .summary-site,body .story-site{background:var(--ui-bg);color:var(--ui-text);font-family:Arial,Helvetica,sans-serif}
 body .summary-site :is(p,li),body .signature-footer p{font-size:var(--ui-body)!important;line-height:1.65!important;color:var(--ui-muted)!important}
 body .summary-site :is(a,button),body .signature-footer :is(a,button){font-size:17px!important;line-height:1.5}

@@ -66,3 +66,6 @@ Runtime integrations: `@mojs/core` supplies interaction bursts; `remotion` and `
 
 ## Unified project presentation
 Project cards now open the matching Remotion workflow in a native modal; case studies remain available via its story link. The older ProductHero and Documentary presentations were removed from project pages to eliminate duplicate stories and pale surfaces. Each case study leads with a short problem/decision/status summary; original detail and scope limits remain in a collapsed disclosure. A shared charcoal, white, and orange type/color contract is applied across the portfolio. The regenerated Aexvion film is a conceptual UI walkthrough, not footage of the deployed product.
+
+## Light editorial direction
+The latest owner-supplied screenshot sets the warm off-white canvas, dark ink, peach/lavender hero, yellow highlights, and blue accents. The hero is an original CSS color composition, not a copy of the reference's illustrated sky. Instrument Serif (Google Fonts, SIL Open Font License) is self-hosted with its license under public/fonts. It is a close visual match; the live reference site was inaccessible and its exact font could not be verified. The particle signature now samples the same serif font in dark ink. Product films and dialogs use the matching light palette.
