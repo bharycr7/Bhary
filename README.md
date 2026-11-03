@@ -39,3 +39,8 @@ The introduction now explains Bharath's value, product and creator work, interac
 `CommunityAndContact.tsx` presents the owner-run Agentbuilders community, its website, and the owner-provided WhatsApp invitation. It also renders the explicit contact address and interactive dot-matrix name. `ui/particle-name.tsx` uses local canvas text sampling and spring motion, with offscreen/hidden-tab suspension, a pause control, reduced-motion support, and a text fallback.
 
 The main introduction features the interactive particle name. Honors use editorial highlights and scroll-driven perspective/lift, with reduced-motion support.
+
+### Motion collection
+`content/motion-projects.ts` defines project art and film chapters. `src/components/motion` contains the reusable 3D gallery, SVG art, artifact folders, and lazy-loaded Remotion player. `src/remotion/ProjectFilm.tsx` is shared by interactive playback and video export. Films start only on user playback; they pause offscreen and on tab hide. Gallery effects respect reduced motion. Editable SVG studies in `public/artwork` can be opened in Graphite or another SVG editor.
+
+Render a film with `npx remotion render src/remotion/index.tsx AexvionProductFilm out/aexvion.mp4`. On this cloud executor add `--browser-executable=/usr/bin/chromium --concurrency=2`. Remotion/Motionsites MCP and the authenticated 21st registry were not available; see CONTENT_SOURCES.md for precise integration status.
