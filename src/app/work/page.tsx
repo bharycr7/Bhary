@@ -1,2 +1,13 @@
-import {redirect} from 'next/navigation';
-export default function Page(){redirect('/explore#projects')}
+import PortfolioPage from '../../components/PortfolioPage';
+import {profile} from '../../../content/profile';
+import ProjectMotionGallery from '../../components/motion/ProjectMotionGallery';
+import {SkillMap} from '../../components/PortfolioStory';
+import ArtifactShowcase from '../../components/ArtifactShowcase';
+export const metadata={title:'Projects — Bharath’s Portfolio'};
+export default function Projects(){return <PortfolioPage title="Products with a purpose." intro="Explore my projects, the thinking behind them, and the ways I can contribute."><section className="explore-section" id="projects"><header><span className="summary-kicker">01 / PROJECTS</span><h2>From product thinking to working ideas.</h2><p>Explore the decisions behind each project and play its product walkthrough.</p></header><ProjectMotionGallery/></section>
+<section className="explore-section" id="offerings"><header><span className="summary-kicker">03 / OFFERINGS</span><h2>Where I can contribute.</h2><p>Bring a product question, a startup idea, or a workflow worth improving. These are the areas I enjoy working through with others.</p></header><div className="offering-grid">{[
+{title:'Product & agentic workflows',text:'Clarify the problem, map the workflow, and connect technical choices to a useful product.'},
+{title:'Startup validation',text:'Explore customer needs, technology moats, business moats, and the assumptions worth testing.'},
+{title:'Learning & communication',text:'Make AI tools and product concepts practical through demonstrations, writing, and reusable frameworks.'}
+].map(item=><article key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}</div><a className="explore-action" href={'mailto:'+profile.email}>Discuss an idea ↗</a><details className="explore-disclosure" id="skills"><summary>Explore my skills and expertise</summary><SkillMap/></details><details className="explore-disclosure" id="resources"><summary>AI PM Mastery, GTM, and learning resources</summary><ArtifactShowcase/></details></section>
+</PortfolioPage>}

@@ -1,2 +1,2 @@
 import {redirect} from 'next/navigation';
-export default function Page(){redirect('/explore#offerings')}
+export default function Page(){redirect('/brand#honors')}
