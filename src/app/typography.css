@@ -13,9 +13,14 @@ body .summary-site .project-detail-title h1{font-family:var(--display-font)!impo
 body .summary-site .project-cinema h2,body .summary-site .project-summary-grid h2{font-size:32px!important}
 @media(max-width:700px){body .summary-site .summary-wordmark{font-size:32px!important}body .summary-site .summary-position{font-size:46px!important}body .summary-site h2{font-size:36px!important}body .summary-site h3{font-size:30px!important}}
 
-body .summary-site .summary-header nav a{font-family:var(--display-font)!important;font-size:25px!important;font-weight:400;line-height:1.25}
-body .summary-site .summary-header nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--ui-accent);text-underline-offset:6px;text-decoration-thickness:2px}
-body .summary-site .summary-header{flex-wrap:wrap;gap:20px}
-body .summary-site .summary-header nav{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 20px}
-@media(max-width:1200px){body .summary-site .summary-header nav{order:3;flex-basis:100%}}
-@media(max-width:600px){body .summary-site .summary-header nav{display:grid;grid-template-columns:1fr 1fr;text-align:center;gap:14px}body .summary-site .summary-header nav a{font-size:22px!important}}
+
+/* Explicit, self-contained category navigation at every breakpoint. */
+body .summary-site .summary-header{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;height:auto;min-height:0;padding:20px 5%;gap:18px;max-width:1440px;width:100%;margin:auto}
+body .summary-site .summary-header .summary-wordmark{min-width:0;white-space:normal;line-height:1.05;justify-self:start}
+body .summary-site .summary-header>div{grid-column:2;grid-row:1;justify-self:end}
+body .summary-site .summary-header nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-column:1/-1;grid-row:2;gap:8px;padding:0;width:100%;min-width:0;order:initial}
+body .summary-site .summary-header nav a{display:flex;align-items:center;justify-content:center;text-align:center;min-width:0;min-height:52px;padding:10px 12px;font:400 25px/1.15 var(--display-font)!important;color:var(--ui-text);border:1px solid var(--ui-line);border-radius:10px;text-decoration:none;background:var(--ui-panel);overflow-wrap:break-word}
+body .summary-site .summary-header nav a[aria-current="page"]{background:var(--ui-text);color:var(--ui-bg);border-color:var(--ui-text);text-decoration:none}
+body .summary-site .summary-header nav a:after{display:none}
+body .summary-site .summary-header nav a:hover{outline:2px solid var(--ui-accent);outline-offset:1px}
+@media(max-width:700px){body .summary-site .summary-header{padding:16px 4%;gap:16px}body .summary-site .summary-header nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}body .summary-site .summary-header nav a{font-size:22px!important;min-height:60px;padding:8px}body .summary-site .summary-header .summary-wordmark{font-size:30px!important}body .summary-site .summary-header>div>a{font-size:15px!important;padding:10px 12px}}

@@ -102,3 +102,10 @@ html[data-theme="dark"] .scene-heading{color:#fff3df}
 @media(prefers-reduced-motion:reduce){.scene-moving .corridor-card{animation:none}}
 body .summary-site .editorial-introduction h1{font-size:24px!important;letter-spacing:0}
 @media(max-width:800px){body .summary-site .summary-header{display:flex;flex-wrap:wrap}body .summary-site .summary-header nav{display:flex;order:3;flex-basis:100%;justify-content:center;gap:28px;padding:7px 0}body .summary-site .summary-header nav a{font-size:17px!important}}
+
+/* Content headers size to their text; only site navigation uses a row layout. */
+.detail-page-intro,.explore-section>header{min-width:0;max-width:100%;height:auto;display:block}
+.detail-page-intro>*,.explore-section>header>*{max-width:100%;overflow-wrap:break-word}
+body .summary-site .detail-page-intro h1{letter-spacing:-1px;line-height:1.08}
+body .summary-site .concise-project>header{height:auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding:24px 0}
+@media(max-width:700px){body .summary-site .detail-page-intro h1{font-size:42px!important}.detail-page-intro{padding:30px 0}.connect-links{min-width:0}.connect-links a{word-break:break-word}}
