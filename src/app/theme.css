@@ -109,3 +109,26 @@ body .summary-site .editorial-introduction h1{font-size:24px!important;letter-sp
 body .summary-site .detail-page-intro h1{letter-spacing:-1px;line-height:1.08}
 body .summary-site .concise-project>header{height:auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding:24px 0}
 @media(max-width:700px){body .summary-site .detail-page-intro h1{font-size:42px!important}.detail-page-intro{padding:30px 0}.connect-links{min-width:0}.connect-links a{word-break:break-word}}
+
+/* Homepage controls stay in the header, leaving the introduction unobstructed. */
+body .summary-site .summary-header .header-preferences{grid-column:1/-1;grid-row:3;display:flex;justify-content:flex-end;justify-self:stretch;gap:10px;min-height:40px}
+body .summary-site .header-preferences :is(.theme-toggle,.rain-control){position:static;inset:auto;transform:none;display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 14px;margin:0;border-radius:22px;font:15px/1.3 Arial,sans-serif!important;letter-spacing:0;box-shadow:none;pointer-events:auto}
+body .summary-site .header-preferences .rain-control{background:var(--ui-panel);color:var(--ui-text)!important;border:1px solid var(--ui-line)}
+.home-overview .overview-directory>div{gap:18px;border-top:0}
+.home-overview .overview-directory>div>a{background:var(--ui-panel);border:1px solid var(--ui-line);border-radius:14px;padding:24px}
+@media(min-width:1100px){body .summary-site .summary-header{grid-template-columns:minmax(0,1fr) auto auto}body .summary-site .summary-header .header-preferences{grid-column:2;grid-row:1;justify-self:end}body .summary-site .summary-header .header-actions{grid-column:3;grid-row:1}}
+@media(max-width:700px){
+ .reel-sky-scene{height:450px}
+ .reel-corridor{display:flex;gap:20px;inset:50px 0 76px;padding:8px 24px 12px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:24px;perspective:none;transform-style:flat;scrollbar-width:thin}
+ .corridor-card{position:relative;inset:auto;flex:0 0 164px;width:164px;height:292px;aspect-ratio:9/16;transform:none;z-index:auto;margin:0!important;scroll-snap-align:start;box-shadow:0 8px 16px #17264035}
+ .scene-moving .corridor-card{animation:none}
+ .corridor-card-title{font-size:14px;line-height:1.35}
+ .scene-controls{bottom:18px;max-width:calc(100% - 16px);gap:6px}
+ .editorial-introduction{padding:26px 6%;gap:24px}
+ .home-overview .overview-directory>div{grid-template-columns:1fr;gap:14px}
+ .home-overview .overview-directory>div>a{padding:22px}
+ body .summary-site .summary-header .header-preferences{justify-content:center}
+}
+
+@media(max-width:700px){body .summary-site .scene-controls .scene-motion{display:none}}
+body .summary-site .summary-header .header-preferences>span{display:inline-flex;align-items:center;min-width:0}
