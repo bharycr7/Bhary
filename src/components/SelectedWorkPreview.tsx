@@ -1,0 +1,4 @@
+export default function SelectedWorkPreview(){return <section className="selected-work-preview" aria-labelledby="selected-work-title"><div><span className="summary-kicker">SELECTED WORK</span><h2 id="selected-work-title">The product. The thinking behind it.</h2><a href="/work">All project stories →</a></div><div className="selected-work-grid">{[
+{slug:'aexvion',title:'Aexvion',text:'Connecting evidence, human approval, and agent execution.'},
+{slug:'data-state-intelligence',title:'Data State Intelligence',text:'Moving from job status to end-to-end data readiness.'}
+].map(p=><a key={p.slug} href={'/work/'+p.slug}><img src={'/projects/'+p.slug+'.svg'} alt={p.title+' workflow illustration'} width="1100" height="740" loading="lazy"/><div><h3>{p.title}</h3><p>{p.text}</p><span>Explore the story ↗</span></div></a>)}</div></section>}
