@@ -50,10 +50,10 @@ export default function ReelCorridor() {
           if (el.scrollLeft >= max - 1) direction = -1;
           if (el.scrollLeft <= 1) direction = 1;
           if (pan < 0 || Math.abs(el.scrollLeft - pan) > 2) pan = el.scrollLeft;
-          pan = Math.max(0, Math.min(max, pan + dt * 26 * direction));
+          pan = Math.max(0, Math.min(max, pan + dt * 36 * direction));
           el.scrollLeft = pan;
         } else {
-          travel.current = (travel.current + dt * .19) % 9;
+          travel.current = (travel.current + dt * .38) % 9;
           positionCards();
         }
       }
@@ -88,11 +88,8 @@ export default function ReelCorridor() {
     <div className="scene-clouds" aria-hidden="true"/>
     <div className="scene-heading"><span>BHARATH RAJU KB / IDEAS IN MOTION</span><span>Original reels · @ask_bharath</span></div>
     <div className="reel-corridor" ref={rail} role="region" aria-label="Browse original reels"
-      onPointerEnter={e => {if (e.pointerType === 'mouse') setInteracting(true);}}
-      onPointerLeave={() => setInteracting(false)}
       onTouchStart={() => {resumeAt.current = performance.now() + 8000;}}
       onTouchMove={() => {resumeAt.current = performance.now() + 8000;}}
-      onWheel={() => {resumeAt.current = performance.now() + 5000;}}
       onFocusCapture={() => setInteracting(true)}
       onBlurCapture={e => {if (!e.currentTarget.contains(e.relatedTarget)) setInteracting(false);}}>
       {reels.slice(0,9).map((r, i) => <button key={r.id} className="corridor-card" style={{'--position':i-4, '--distance':Math.abs(i-4)} as React.CSSProperties}

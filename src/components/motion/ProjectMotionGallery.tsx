@@ -1,36 +1,15 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
 import {motionProjects} from '../../../content/motion-projects';
-import {projectSummaries} from '../../../content/project-summaries';
-import {caseStudies} from '../../../content/case-studies';
-import ProjectVideoDialog from './ProjectVideoDialog';
-
-/** Vertical chapters follow normal page scrolling; the active chapter is explicit. */
+import ProjectExperienceDialog from './ProjectExperienceDialog';
 export default function ProjectMotionGallery(){
- const root=useRef<HTMLDivElement>(null),imageDialog=useRef<HTMLDialogElement>(null);
- const[active,setActive]=useState(0),[video,setVideo]=useState<string|null>(null),[image,setImage]=useState<string|null>(null);
- const[paused,setPaused]=useState(false),[reduced,setReduced]=useState(true);
- useEffect(()=>{const media=matchMedia('(prefers-reduced-motion: reduce)');const sync=()=>setReduced(media.matches);sync();media.addEventListener('change',sync);return()=>media.removeEventListener('change',sync)},[]);
- useEffect(()=>{
-  let frame=0;
-  const update=()=>{frame=0;const chapters=root.current?.querySelectorAll<HTMLElement>('.product-chapter');if(!chapters)return;let closest=0,distance=Infinity;
-   chapters.forEach((chapter,i)=>{const r=chapter.getBoundingClientRect();const d=Math.abs(r.top-innerHeight*.25);if(d<distance){distance=d;closest=i;}
-    const progress=Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight*.8)));
-    chapter.style.setProperty('--chapter-reveal',String(paused||reduced?1:progress));
-   });setActive(closest);
-  };
-  const schedule=()=>{if(!frame)frame=requestAnimationFrame(update)};
-  update();addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);
-  return()=>{cancelAnimationFrame(frame);removeEventListener('scroll',schedule);removeEventListener('resize',schedule)};
- },[paused,reduced]);
- useEffect(()=>{if(image)imageDialog.current?.showModal();else imageDialog.current?.close()},[image]);
- return <div ref={root} className="product-stories" data-motion={paused||reduced?'off':'on'}>
-  <div className="product-chapter-nav"><nav aria-label="Project chapters">{motionProjects.map((p,i)=><a key={p.slug} href={'#story-'+p.slug} aria-current={i===active?'step':undefined}><span>0{i+1}</span>{p.title}</a>)}</nav><button onClick={()=>setPaused(v=>!v)} disabled={reduced} aria-pressed={paused||reduced}>{reduced?'Motion off':paused?'Resume motion':'Pause motion'}</button></div>
-  {motionProjects.map((p,i)=>{const summary=projectSummaries[p.slug],story=caseStudies.find(c=>c.slug===p.slug)!;return <article className="product-chapter" key={p.slug} id={'story-'+p.slug}>
-   <div className="product-chapter-visual"><div className="product-image-frame"><button onClick={()=>setImage(p.slug)} aria-label={'Enlarge '+p.title+' workflow image'}><img src={'/projects/'+p.slug+'.svg'} alt={p.title+' illustrated workflow: '+p.stages.join(', ')} width="1100" height="740" loading={i===0?'eager':'lazy'}/><span className="product-enlarge">View image ↗</span></button></div><p className="product-visual-caption">Workflow illustration · Based on the project story</p><ol className="product-flow">{p.stages.map((s,n)=><li key={s}><span>0{n+1}</span>{s}</li>)}</ol></div>
-   <div className="product-chapter-copy"><span className="product-eyebrow">0{i+1} / {p.category}</span><h3>{p.title}</h3><p className="product-hook">{story.headline}</p><dl><div><dt>The problem</dt><dd>{summary.problem}</dd></div><div><dt>My decision</dt><dd>{summary.decision}</dd></div></dl><p className="product-role"><strong>My role</strong>{story.role}</p><div className="product-story-actions"><a href={'/work/'+p.slug}>Read the full story <span aria-hidden="true">↗</span></a><button onClick={()=>setVideo(p.slug)}>▶ Play walkthrough</button></div></div>
-  </article>})}
-  <ProjectVideoDialog slug={video} onClose={()=>setVideo(null)}/>
-  <dialog ref={imageDialog} className="product-image-dialog" aria-label="Product workflow image" onCancel={()=>setImage(null)} onClose={()=>setImage(null)} onClick={e=>{if(e.target===imageDialog.current)setImage(null)}}>{image&&<><button autoFocus onClick={()=>setImage(null)} aria-label="Close product image">Close ✕</button><img src={'/projects/'+image+'.svg'} alt={motionProjects.find(p=>p.slug===image)?.title+' workflow illustration'}/><p>Illustrative interface based on the documented workflow.</p></>}</dialog>
- </div>;
+ const rail=useRef<HTMLDivElement>(null),host=useRef<HTMLDivElement>(null),holdUntil=useRef(0);
+ const[active,setActive]=useState(0),[open,setOpen]=useState<string|null>(null),[paused,setPaused]=useState(false),[reduced,setReduced]=useState(true),[visible,setVisible]=useState(false),[focused,setFocused]=useState(false);
+ useEffect(()=>{const m=matchMedia('(prefers-reduced-motion: reduce)');const sync=()=>setReduced(m.matches);sync();m.addEventListener('change',sync);const o=new IntersectionObserver(([e])=>setVisible(e.isIntersecting),{threshold:.2});if(host.current)o.observe(host.current);return()=>{m.removeEventListener('change',sync);o.disconnect()}},[]);
+ function go(index:number,manual=true){const el=rail.current;const card=el?.children[(index+4)%4] as HTMLElement|undefined;if(el&&card){if(manual)holdUntil.current=performance.now()+8000;el.scrollTo({left:card.offsetLeft-el.offsetLeft,behavior:reduced?'instant':'smooth'})}}
+ useEffect(()=>{if(paused||reduced||open||!visible||focused)return;const timer=setInterval(()=>{if(!document.hidden&&performance.now()>holdUntil.current)go((active+1)%4,false)},4200);return()=>clearInterval(timer)},[paused,reduced,open,visible,focused,active]);
+ function sync(){const el=rail.current;if(!el)return;let index=0,min=Infinity;Array.from(el.children).forEach((c,i)=>{const d=Math.abs((c as HTMLElement).offsetLeft-el.offsetLeft-el.scrollLeft);if(d<min){min=d;index=i}});setActive(index)}
+ return <div ref={host} className="product-gallery-window"><div className="product-gallery-toolbar"><span>SELECTED WORK / OPEN AN EXPERIENCE</span><div><button aria-label="Previous project" onClick={()=>go(active-1)}>←</button><span>0{active+1} / 04</span><button aria-label="Next project" onClick={()=>go(active+1)}>→</button><button disabled={reduced} aria-pressed={paused||reduced} onClick={()=>setPaused(p=>!p)}>{reduced?'Motion off':paused?'Resume gallery':'Pause gallery'}</button></div></div><div ref={rail} className="product-gallery-rail" role="region" aria-label="Scrollable project collection" onScroll={sync} onTouchStart={()=>{holdUntil.current=performance.now()+8000}} onWheel={()=>{holdUntil.current=performance.now()+8000}} onFocusCapture={()=>setFocused(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget))setFocused(false)}} onKeyDown={e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();go(active+(e.key==='ArrowRight'?1:-1))}}}>
+ {motionProjects.map((p,i)=><button key={p.slug} className="product-portal-card" onClick={()=>setOpen(p.slug)} aria-label={'Open '+p.title+' demo and story'}><div className={'product-portal-art portal-'+p.art}><span>0{i+1} / PRODUCT STUDY</span><div><img src={'/projects/'+p.slug+'.svg'} alt={p.title+' workflow illustration'} width="1100" height="740"/></div><span className="portal-open">Explore ↗</span></div><div className="product-portal-copy"><span>{p.category}</span><h3>{p.title}</h3><p>{p.concept}</p><strong>Interactive demo · Story · Film <span>↗</span></strong></div></button>)}
+ </div><div className="product-gallery-dots" aria-label="Choose a project">{motionProjects.map((p,i)=><button key={p.slug} aria-label={'Go to '+p.title} aria-pressed={active===i} onClick={()=>go(i)}/>)}</div><ProjectExperienceDialog slug={open} onClose={()=>setOpen(null)}/></div>
 }
