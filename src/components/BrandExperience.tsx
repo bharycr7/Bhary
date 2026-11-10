@@ -17,7 +17,7 @@ export default function BrandExperience(){
    <ReelGallery autoAdvance={!still} motionPaused={still}/>
   </section>
   <section className="brand-editorial" aria-label="What I create">
-   <motion.div className="brand-audience" initial={false} whileInView={still?{}:{y:[24,0],opacity:[.5,1]}} viewport={{once:true}} transition={{duration:.7}}><span className="summary-kicker">A SHARED CURIOSITY</span><strong>7M</strong><p className="brand-views-label">views and counting</p><strong>50K<span>+</span></strong><p>people follow my writing and content across LinkedIn, Instagram, Facebook, and YouTube.</p><div><a href={profile.linkedin}>Read on LinkedIn ↗</a><a href={profile.instagram}>Watch on Instagram ↗</a></div></motion.div>
+   <motion.div className="brand-audience" initial={false} whileInView={still?{}:{y:[24,0],opacity:[.5,1]}} viewport={{once:true}} transition={{duration:.7}}><span className="summary-kicker">A SHARED CURIOSITY</span><strong>50K<span>+</span></strong><p>people follow my writing and content across LinkedIn, Instagram, Facebook, and YouTube.</p><div><a href={profile.linkedin}>Read on LinkedIn ↗</a><a href={profile.instagram}>Watch on Instagram ↗</a></div></motion.div>
    <div className="brand-topics">{[
     ['01','Product, explained.','Agentic workflows, product decisions, and tools I put to the test.'],
     ['02','Careers, unpacked.','Job searching, interview preparation, and finding your next opportunity.'],
