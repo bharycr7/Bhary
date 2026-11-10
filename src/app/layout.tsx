@@ -16,5 +16,6 @@ import './product-experience.css';
 import './editorial.css';
 import './project-motion.css';
 import './studio.css';
+import './signal-design.css';
 export const metadata:Metadata={title:'Bharath’s Portfolio — Product leader. Investor. Creator.',description:'Bharath Raju KB: product leader, builder, FinTech and AI startup investor, and creator sharing product management, career, and startup ideas.'};
 export default function Layout({children}:{children:React.ReactNode}){return <html lang="en" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{__html:`(()=>{let t;try{t=localStorage.getItem('bharath-portfolio-theme')}catch{}document.documentElement.dataset.theme=t==='light'||t==='dark'?t:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'})()`}}/></head><body><ThemeProvider><div className="site-atmosphere"><HeroAtmosphere/></div>{children}<WizardCompanion/></ThemeProvider></body></html>}
