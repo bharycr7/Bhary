@@ -1,3 +1,4 @@
+import ExternalSiteEmbed from '../../components/ExternalSiteEmbed';
 import PortfolioPage from '../../components/PortfolioPage';
 import {profile} from '../../../content/profile';
 import ProjectMotionGallery from '../../components/motion/ProjectMotionGallery';
@@ -10,4 +11,4 @@ export default function Projects(){return <PortfolioPage title="Projects" intro=
 {title:'Startup validation',text:'Explore customer needs, technology moats, business moats, and the assumptions worth testing.'},
 {title:'Learning & communication',text:'Make AI tools and product concepts practical through demonstrations, writing, and reusable frameworks.'}
 ].map(item=><article key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}</div><a className="explore-action" href={'mailto:'+profile.email}>Discuss an idea ↗</a><details className="explore-disclosure" id="skills"><summary>Explore my skills and expertise</summary><SkillMap/></details><details className="explore-disclosure" id="resources"><summary>AI PM Mastery, GTM, and learning resources</summary><ArtifactShowcase/></details></section>
-</PortfolioPage>}
+<ExternalSiteEmbed/></PortfolioPage>}
